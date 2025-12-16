@@ -6,7 +6,11 @@ let fighting;
 let monterHealth;
 let inventory = ["stick"];
 
-const button1 = document.querySelector("#button1");
+const controls = document.getElementById("controls");
+const button1 = document.querySelector("#controls :nth-child(1)");
+button1.style.backgroundColor = "yellow";
+const container = document.querySelector('.container:nth-child(2)');
+// const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
