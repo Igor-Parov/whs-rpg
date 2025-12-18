@@ -13,16 +13,6 @@ class Player {
   }
 }
 
-function isValidUrl(str) {
-  try {
-    const url = new URL(str);
-    return url.protocol === "http:" || url.protocol === "https:";
-  } catch (e) {
-    return false;
-  }
-}
-
-
 const player = new Player();
 
 let xp = player.xp;
