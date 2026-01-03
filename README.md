@@ -5,3 +5,4 @@
 ## Notes ##
 1. Files beginning with capital letters are OOP Classes
 2. Files beginning with lower case letters are procedural JS
+3. A function cannot be called from a different file unless it was defined in a pre-loaded file. 
