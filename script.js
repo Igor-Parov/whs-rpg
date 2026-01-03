@@ -9,25 +9,6 @@ let monsterHealth;
 let inventory = ["stick"];
 let objects = ["orb", "key", "skull"]
 
-
-const monsters = [
-  {
-    name: "slime",
-    level: 2,
-    health: 15
-  },
-  {
-    name: "fanged beast",
-    level: 8,
-    health: 60
-  },
-  {
-    name: "dragon",
-    level: 20,
-    health: 300
-  }
-];
-
 const locations = [
     {
         name: "town square",
