@@ -1,1 +1,2 @@
-/* Store all locations objects here */
+/* Store locations constructor and all locations objects here */
+
