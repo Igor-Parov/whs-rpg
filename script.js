@@ -10,25 +10,6 @@ let inventory = ["stick"];
 let objects = ["orb", "key", "skull"]
 
 
-const allWeapons = [
-	{
-		name: "stick",
-		power: 5
-	},
-	{
-		name: "dagger",
-		power: 30
-	},
-	{
-		name: "claw hammer",
-		power: 50
-	},
-	{
-		name: "sword",
-		power: 100
-	}
-];
-
 const monsters = [
   {
     name: "slime",
@@ -109,6 +90,7 @@ function buyHealth() {
     }
 
 }
+
 
 function sellWeapon() {
 	if (inventory.length > 1) {
