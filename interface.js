@@ -16,6 +16,26 @@ const myWeapons = document.querySelector("#stats li:nth-child(5)");
 const stats = document.querySelector("#stats li:nth-child(5)");
 const infoBox = document.getElementById('infoBox');
 
+setUp();
+
+function setUp() {
+	createNavCross();
+}
+
+function createNavCross() {
+	document.getElementById("game");
+	let navCross = document.createElement("div");
+	game.appendChild(navCross);
+	navCross.id = "navCross";
+	document.getElementById("navCross");
+	let navBox;
+	for(let i = 0; i < 4; i++){
+		navBox = document.createElement("div");
+		navBox.id = "nav" + i;
+		navCross.appendChild(navBox);
+	}
+}
+
 function showObjects() {
 	showInventory(myObjects, objects, "objects");
 }
