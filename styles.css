@@ -80,6 +80,12 @@ margin-bottom: 10px;
 #navCross div:first-child:hover {
 background-color: white;
 }
+
+.clickable{
+  color: blue!important;
+
+}
+
 #controls {
   border: 1px black solid;
   padding: 5px;

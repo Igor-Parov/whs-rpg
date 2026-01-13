@@ -23,7 +23,7 @@ function setUp() {
 }
 
 function createNavCross() {
-	getNavLocations();
+	let possibles = getNavLocations();
 	let board = document.getElementById("gameBoard");
 	const firstChild = board.firstElementChild;
 	let navCross = document.createElement("div");
@@ -36,8 +36,14 @@ function createNavCross() {
 		navBox = document.createElement("div");
 		navBox.id = "nav" + i;
 		navBox.innerHTML = buttonLabels[i];
-		navCross.appendChild(navBox);
-	}
+		if(i > 0 && possibles[i-1] > 0){
+			navBox.addEventListener("click", (event) => {
+  			update(WHS.Locations[possibles[i-1]]);
+		});
+		navBox.classList.add('clickable');
+		}
+	navCross.appendChild(navBox);
+}
 
 
 	navButtons = [];
@@ -50,23 +56,27 @@ function getNavLocations() {
 	let locationNow = player.currentLocation;
 	let coordsNow = WHS.locations[locationNow].coords;
 	console.log("coords are " + coordsNow);
-	let move = locations[0].coords[1] += 1
-	console.log(WHS.locations[move]);
 	let proximals = [[0,1], [1,0], [0,-1], [-1,0]];
 	let testX;
 	let testY;
-	let possibles = [];
-	for(let i =0; i < 4; i++){
+	let possibles = [0,0,0,0];
+	for(let i = 0; i < proximals.length; i++){
 		testX = coordsNow[0] + proximals[i][0];
 		testY = coordsNow[1] + proximals[i][1];
-		possibles.push(testLocation(testX, testY));
+		console.log("test next location with coordinates = " + testX + "," + testY);
+		if (testLocation(testX, testY) != -1){
+			possibles[i] = testLocation(testX, testY);
+			console.log("possibles: " + possibles);
+		}
 	}
-	console.log("1,-1,-1,-1?" + possibles);
+	return possibles;
 }
 
 function testLocation(x,y){
 	for(let i = 0; i < WHS.locations.length; i++){
-		if(WHS.locations[i].coords == [x,y]){
+		console.log("next location: " + WHS.locations[i].coords);
+		if(WHS.locations[i].coords[0] == x && WHS.locations[i].coords[1] == y){
+			console.log("match found: " + WHS.locations[i].coords);
 			return i;
 		}
 	}
