@@ -1,7 +1,6 @@
 class Action {
-	static lastIndex = 0;
-	constructor(index, name, text) {
-		this.index = index;
+	
+	constructor(name, text) {
 		this.name = name;
 		this.text = text;
 		// this.getCurrentCoords = this.getCurrentCoords.bind(this);
@@ -39,32 +38,55 @@ class Choices {
         });
     }
 
-	getName(index){
-		return this.actions[index].name;
+	getName(){
+		return this.actions.name;
   	}
 
 } // End Choices Class
 
 
-const locations = [
+const actions = [
 	{
-		index: 1,
-	 	name: "Main Entrance",
-		text: "You are in the main entrance. You've just been let into the school when the receptionist tells you: \n \"We need your help, and quickly too.\" "
+	 	name: "Eat Lunch",
+		text: "You go to the cafe and take a tray. You will never know what you will find, how much it would cost, how would it affect your health and XP, and whether it'll give you any magic powers.",
+		choices: ["Read Menu", "Fill Tray Randomly", "Steal Pocket Foods"] 
 	},
 	{
-		index: 2,
-	 	name: "Front Office",
+	 	name: "Read Menu",
+		text: "Here are the items on the menu. Pick one to start.",
+		choices: generateMenu()
+	},
+	{
+	 	name: "Fill Tray Randomly",
+		text: "You filled your tray with random items. Now you're at the register.",
+		choices: ["Pay With Gold", "Sneak Out"]
+	},
+	{
+	 	name: "Get Pass",
 		text: "The receptionist's stare, waiting for you to do something."
 	},
 	{
-		index: 5,
-	 	name: "Stairwell",
+	 	name: "Lie",
 		text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans."
 	},
 	{
-		index: 2,
-	 	name: "Library",
+	 	name: "Buy Weapon",
+		text: "You're attacked as you enter the library."
+	},
+	{
+	 	name: "Sell Weapon",
+		text: "You're attacked as you enter the library."
+	},
+	{
+	 	name: "Attack",
+		text: "You're attacked as you enter the library."
+	},
+	{
+	 	name: "Dodge",
+		text: "You're attacked as you enter the library."
+	},
+	{
+	 	name: "Run",
 		text: "You're attacked as you enter the library."
 	}
 ]
@@ -92,5 +114,15 @@ function goTown() {
 function goCave() {
     update(locations[2]);
 }
-
+function actionButtons(location) {
+    monsterStats.style.display = "none";
+	button1.innerText = location["button text"][0];
+	button2.innerText = location["button text"][1];
+	button3.innerText = location["button text"][2];
+	button1.onclick = location["button functions"][0];
+	button2.onclick = location["button functions"][1];
+	button3.onclick = location["button functions"][2];
+    text.innerText = location.text;   
+	player.setLocation(locations.indexOf(location)); 
+}
 
