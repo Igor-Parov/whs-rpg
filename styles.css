@@ -27,14 +27,13 @@ body {
   text-align:center;
 }
 
-#game, #navCross {
-  width: 600px;
-  max-height: 400px;
+#game {
+  width: 800px;
   background-color: lightgray;
   color: white;
   margin: 0 auto;
   padding: 10px;
-  float:left;
+  display:inline-block;
 }
 
 #navCross {
