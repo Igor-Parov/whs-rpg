@@ -47,6 +47,14 @@ class Choices {
 
 const actions = [
 	{
+	 	name: "Get Pass",
+		text: "The receptionist's stare, waiting for you to do something."
+	},
+	{
+	 	name: "Lie",
+		text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans."
+	},
+	{
 	 	name: "Eat Lunch",
 		text: "You go to the cafe and take a tray. You will never know what you will find, how much it would cost, how would it affect your health and XP, and whether it'll give you any magic powers.",
 		choices: ["Read Menu", "Fill Tray Randomly", "Steal Pocket Foods"] 
@@ -60,14 +68,6 @@ const actions = [
 	 	name: "Fill Tray Randomly",
 		text: "You filled your tray with random items. Now you're at the register.",
 		choices: ["Pay With Gold", "Sneak Out"]
-	},
-	{
-	 	name: "Get Pass",
-		text: "The receptionist's stare, waiting for you to do something."
-	},
-	{
-	 	name: "Lie",
-		text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans."
 	},
 	{
 	 	name: "Buy Weapon",
