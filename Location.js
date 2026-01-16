@@ -1,19 +1,30 @@
 class Location {
 	static lastIndex = 0;
-	constructor(index, name, coords) {
+	constructor(index, name, coords, text) {
 		this.index = index;
 		this.name = name;
 		this.coords = coords;
-		// this.actions = actions;
 		this.text = text;
-		// this.npcs = npcs;
-		// this.dialogue = dialogue
-		// this.getCurrentCoords = this.getCurrentCoords.bind(this);
+		// this.actions = actions;
+
   	}
-  getCurrentName(){
-	return this.name;
-  }
+	getName(){
+		return this.name;
+  	}
+
+	getIndex(){
+		return this.index;
+  	}
+
+	getText(){
+		return this.text;
+  	}
   
+	getCoords(){
+		console.log("Coords = "+ this.coords);
+    	return this.coords;
+  	}
+	
 } // End Location Class
 
 /* This is a collection of all the locations which can be referenced from other classes */
@@ -47,6 +58,7 @@ class Place {
 } // End Place Class
 
 
+
 const locations = [
 	{
 		index: -1,
@@ -67,15 +79,16 @@ const locations = [
 	{
 		index: 2,
 	 	name: "Stairwell",
-		coords: [-1,1]
+		coords: [-1,1],
+		text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans."
 		// "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
 		// "button functions": [fightSlime, fightBeast, goTown],
-		// text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans."
 	},
 	{
 		index: 3,
 	 	name: "Library",
-		coords: [1,1]
+		coords: [1,1],
+		text: "You're attacked as you enter the library."
 		// "button text": ["Attack", "Dodge", "Run"],
 		// "button functions": [attack, dodge, goTown],
 		// text: "You're attacked as you enter the library."
@@ -85,7 +98,7 @@ const locations = [
 	 	name: "Cafeteria",
 		coords: [1,-1],
 		text: "You enter the cafeteria. There are many smells coming from the lunch line. There's a noisy table and a quiet student sitting alone.",
-		buttons : ["Eat Lunch", "Join Group", "Approach Student"]
+		//buttons : ["Eat Lunch", "Join Group", "Approach Student"]
 	}
 ]
 	// {
@@ -119,9 +132,17 @@ const locations = [
 // ]
 
 
+const WHS = new Place('WHS');
+locations.forEach(data => {
+    const newPlace = new Location(data.index, data.name, data.coords, data.text);
+    WHS.addLocation(newPlace);
+});
+
+console.log("WHS is created!");
+console.log("First one: " + WHS.locations[0].text);
 
 
-function update(pointer) {
+//function update(pointer) {
     // monsterStats.style.display = "none";
 	// button1.innerText = location["button text"][0];
 	// button2.innerText = location["button text"][1];
@@ -129,10 +150,11 @@ function update(pointer) {
 	// button1.onclick = location["button functions"][0];
 	// button2.onclick = location["button functions"][1];
 	// button3.onclick = location["button functions"][2];
-	console.log("trying " + JSON.stringify(pointer.text));
-    text.innerText = JSON.stringify(WHS.locations[0].text);
-	player.setLocation(locations.indexOf(location)); 
-}
+	//console.log("trying " + JSON.stringify(pointer.text));
+    //text.innerText = JSON.stringify(WHS.locations[0].text);
+//	player.setLocation(locations.indexOf(location)); 
+//}
+
 
 
 
