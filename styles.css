@@ -237,7 +237,7 @@ cursor:pointer;
 }
 #go{
   position:absolute;
-  left:260px;
+  
   display:none;
   background-color: white;
 }

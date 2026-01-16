@@ -25,7 +25,7 @@ const board = document.getElementById("main");
 
 setUp();
 function setUp() {
-   update(WHS.locations[0]);
+   update(WHS.locations[4]);
    goButtons();
    showPages();
    createNavCross();
@@ -273,11 +273,24 @@ function buildWeapons() {
    }
    return w;
 }
+function buildActions() {
+   let b = [];
+   currentLocation = player.getCurrentLocation();
+    let locationNow = WHS.locations.find(location => location.index === currentLocation);
+   for (let action = 0; action < locationNow.actions.length; action++) {
+      b.push(locationNow.actions[action].name)
+   }
+   return b;
+}
+function showActions() {
+   console.log(buildActions.toString())
+   showInventory(controls, buildActions(), "actions")
+}
 
 // initialize buttons
-button1.onclick = goStore;
-button2.onclick = goCave;
-button3.onclick = fightDragon;
+//button1.onclick = goStore;
+//button2.onclick = goCave;
+//button3.onclick = fightDragon;
 
 function update(location) {
    text.innerText = location.getText();   

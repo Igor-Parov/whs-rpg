@@ -64,9 +64,11 @@ const locations = [
 		index: -1,
 	 	name: "Main Entrance",
 		coords: [0,0],
+		
 		// "button text": ["Go to store", "Go to cave", "Fight dragon"],
 		// "button functions": [goStore, goCave, fightDragon],
-		 text: "You are in the main entrance. You've just been let into the school when the receptionist tells you: \n \"We need your help, and quickly too.\" "
+		 text: "You are in the main entrance. You've just been let into the school when the receptionist tells you: \n \"We need your help, and quickly too.\" ",
+		 actions: []
 	},
 	{
 		index: 1,
@@ -74,13 +76,15 @@ const locations = [
 		coords: [0,1],
 		// "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
 		// "button functions": [buyHealth, player.buyWeapon, goTown],
-		 text: "The receptionist's stare, waiting for you to do something."
+		 text: "The receptionist's stare, waiting for you to do something.",
+		 actions: []
 	},
 	{
 		index: 2,
 	 	name: "Stairwell",
 		coords: [-1,1],
-		text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans."
+		text: "You enter the stairwell, the lights have been cut off and you hear terrible, monstrous groans.",
+		actions: []
 		// "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
 		// "button functions": [fightSlime, fightBeast, goTown],
 	},
@@ -88,7 +92,8 @@ const locations = [
 		index: 3,
 	 	name: "Library",
 		coords: [1,1],
-		text: "You're attacked as you enter the library."
+		text: "You're attacked as you enter the library.",
+		actions: []
 		// "button text": ["Attack", "Dodge", "Run"],
 		// "button functions": [attack, dodge, goTown],
 		// text: "You're attacked as you enter the library."
@@ -98,6 +103,7 @@ const locations = [
 	 	name: "Cafeteria",
 		coords: [1,-1],
 		text: "You enter the cafeteria. There are many smells coming from the lunch line. There's a noisy table and a quiet student sitting alone.",
+		actions: ["Eat Lunch", "Join Group", "Approach Student"]
 		//buttons : ["Eat Lunch", "Join Group", "Approach Student"]
 	}
 ]

@@ -13,7 +13,7 @@ class Player {
 	this.buyWeapon = this.buyWeapon.bind(this); // ← bind once so button knows which player to use
 	this.weapons = [0];
     this.locations = [0];
-    this.currentLocation = -1;
+    this.currentLocation = 8;
 	this.setLocation = this.setLocation.bind(this);
   }
 
@@ -33,8 +33,8 @@ class Player {
   }
 
   getCurrentCoords(){
-     let locationMatch = WHS.locations.find(location => location.getIndex() === this.currentLocation);
-     return locationMatch.getCoords();
+     let locationMatch = WHS.locations.find(location => location.getIndex() === this.currentLocation.index);
+    return locationMatch ? locationMatch.coords : null;
   }
 
   getCurrentLocationObject(){
